@@ -1,5 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
 .App {
   text-align: center;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.layout {
+  min-height: 100vh;
+}
+
+body {
+  background-color: white !important;
+}
+
+.titleText {
+  text-align: center;
+  font-weight: 300;
+  font-family: 'Poppins';
+  font-size: 30px;
+
+}
+.titleText {
+  text-align: center;
+  font-weight: 300;
+  font-family: 'Poppins';
+  font-size: 30px;
+
+}
+li{
+  line-height: 4;
+  font-weight: 300;
+  font-family: 'Poppins';
+  font-size: 14px;
+}
+.our-focus{
+  line-height: 2;
+  font-weight: 300;
+  font-family: 'Poppins';
+  font-size: 14px;
+}
+.bold{
+  font-weight: 600;
+}
+.titleText2{
+  font-size: 20px;
+}
+
+.ant-layout-header {
+  background-color: black;
+}
+
+.ant-collapse {
+  background-color: white !important;
+  font-family: 'Poppins';
+}
+.ant-collapse-item{
+  border-bottom: unset !important;
+}
+
+.ant-menu-item-selected {
+  background-color: black !important;
+  color: white !important;
+  border-radius: 0 !important;
+  height: 50px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+  top: 50% !important;
+  margin-top: 5px !important;
+  border-bottom: 1px solid white;
+}
+
+.ant-menu-dark {
+  background-color: black;
+}
+
+.round {
+  min-width: 8px;
+  height: 8px;
+  border-radius: 15px;
+  background-color:black
+}
+
+.site-layout-content {
+  background: #fff;
+  min-height: 100vh;
+}
+.at-the-end{
+  margin: 0 15%;
+}
+
+@media (max-width: 600px) {
+
+  /* Mobile styles */
+  .ant-collapse {
+    flex-direction: column !important;
+    /* Override Ant Design styles for mobile */
+  }
+
+  .titleText {
+    font-weight: 600;
+    font-size: 14px;
+  
+  }
+  .titleText2 {
+    font-weight: 600;
+    font-size: 14px;
+  
+  }
+  .at-the-end{
+    margin: 0 10px;
+  }
+
+  .ant-collapse-item {
+    width: 100% !important;
+    /* Adjust item width for better mobile layout */
+  }
+}
+
+.title {
+  font-weight: 300;
+  font-size: 8vw;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fade-out-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.fade-out-container .title {
+  position: absolute;
+  left: -100%;
+  /* Initial position off-screen to the left */
+  transition: left 0.5s ease;
+  /* Adjust the duration and easing as needed */
+}
+
+.fade-out-container:hover .title {
+  left: 0;
+  /* Move to the original position on hover */
+}
+
+.fade-in-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.fade-in-container .title {
+  position: absolute;
+  left: 0;
+  /* Initial position at the original position */
+  transition: left 0.5s ease;
+  /* Adjust the duration and easing as needed */
+}
+
+.fade-in-container:hover .title {
+  left: -100%;
+  /* Move off-screen to the left on hover */
+}
+
+.title2 {
+  opacity: 0;
 }
 
 .App-logo {
@@ -32,6 +203,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
