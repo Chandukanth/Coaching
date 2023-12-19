@@ -10,6 +10,7 @@ import './App.css';
 import Learning from "./assets/learning.svg"
 import Build from "./assets/build.svg";
 import { Collapse } from 'antd';
+import { motion } from "framer-motion"
 // eslint-disable-next-line
 const { Header, Content, Footer } = Layout;
 const { Panel } = Collapse;
@@ -97,13 +98,28 @@ function App() {
             </div>
           </section>
 
-          <section id='courses' style={{ overflowX: 'hidden', backgroundColor: 'white', height: '100vh' }}>
-            <div style={{ position: 'absolute', left: '45vw' }}>
-              <img alt='boy' style={{ width: '23%' }} src={require("./assets/boy.png")} />
+          <motion.section id='courses' style={{ overflowX: 'hidden', backgroundColor: 'white', minHeight: '100vh' }}>
+            < motion.div initial={{ x: -300 }}
+              whileInView={{ x: 10 }}
+              transition={{
+                ease: "linear",
+                duration: 2,
+                x: { duration: 1 }
+              }}
+              className='learn-div' >
+              <img className='Learn-image' alt='boy' src={require("./assets/boy.png")} />
 
-            </div>
+            </motion.div>
 
-            <p style={{ marginTop: '10%' }} className='titleText'>THINGS YOU WILL LEARN</p>
+            <motion.p
+              initial={{ x: -300 }}
+              whileInView={{ x: 10 }}
+              transition={{
+                ease: "linear",
+                duration: 2,
+                x: { duration: 1 }
+              }}
+              style={{ marginTop: '10%' }} className='titleText'>THINGS YOU WILL LEARN</motion.p>
 
             <Collapse defaultActiveKey={['1', '2', '3']} style={{ display: 'flex', flexDirection: window.innerWidth < 600 ? 'column' : 'row', justifyContent: 'space-evenly', width: '100vw', overflowX: 'hidden', marginRight: 100 }}>
               <Panel header="Web Development" key="1">
@@ -134,12 +150,16 @@ function App() {
               </Panel>
             </Collapse>
 
-          </section>
+          </motion.section>
 
           <section id='at-the-end' style={{ overflowX: 'hidden', backgroundColor: 'white' }}>
             <div className='at-the-end'>
               {/* <p className='titleText'>At the End of the Course</p> */}
-              <img style={{position : 'relative', left:'30vw'}} src={require("./assets/sucess.png")} alt='sucess' />
+              <motion.img
+               initial={{ scale: 0 }} // Initial scale of 0 (hidden)
+               whileInView={{ scale: 1 }} // Zoom in to a scale of 1
+               transition={{ duration: 0.5 }}
+               style={{ position: 'relative', left: '30vw' }} src={require("./assets/sucess.png")} alt='sucess' />
               <p className='titleText'>Upon completing our courses, you will gain a comprehensive skill set that empowers you to:</p>
 
               <ul>
