@@ -98,27 +98,23 @@ function App() {
             </div>
           </section>
 
-          <motion.section id='courses' style={{ overflowX: 'hidden', backgroundColor: 'white', minHeight: '100vh' }}>
-            < motion.div initial={{ x: -300 }}
-              whileInView={{ x: 10 }}
-              transition={{
-                ease: "linear",
-                duration: 2,
-                x: { duration: 1 }
-              }}
+          <motion.section
+            initial={{ x: -300 }}
+            whileInView={{ x: 10 }}
+            transition={{
+              ease: 'easeIn',
+              duration: 2,
+              x: { duration: 1 }
+            }}
+            id='courses' style={{ overflowX: 'hidden', backgroundColor: 'white', minHeight: '100vh' }}>
+            < motion.div
               className='learn-div' >
               <img className='Learn-image' alt='boy' src={require("./assets/boy.png")} />
 
             </motion.div>
 
             <motion.p
-              initial={{ x: -300 }}
-              whileInView={{ x: 10 }}
-              transition={{
-                ease: "linear",
-                duration: 2,
-                x: { duration: 1 }
-              }}
+
               style={{ marginTop: '10%' }} className='titleText'>THINGS YOU WILL LEARN</motion.p>
 
             <Collapse defaultActiveKey={['1', '2', '3']} style={{ display: 'flex', flexDirection: window.innerWidth < 600 ? 'column' : 'row', justifyContent: 'space-evenly', width: '100vw', overflowX: 'hidden', marginRight: 100 }}>
@@ -152,15 +148,17 @@ function App() {
 
           </motion.section>
 
-          <section id='at-the-end' style={{ overflowX: 'hidden', backgroundColor: 'white' }}>
+          <motion.section
+            initial={{ scale: 0 }} // Initial scale of 0 (hidden)
+            whileInView={{ scale: 1 }} // Zoom in to a scale of 1
+            transition={{ duration: 0.5 }}
+            id='at-the-end' style={{ overflowX: 'hidden', backgroundColor: 'white' }}>
             <div className='at-the-end'>
               {/* <p className='titleText'>At the End of the Course</p> */}
-              <motion.img
-               initial={{ scale: 0 }} // Initial scale of 0 (hidden)
-               whileInView={{ scale: 1 }} // Zoom in to a scale of 1
-               transition={{ duration: 0.5 }}
-               style={{ position: 'relative', left: '30vw' }} src={require("./assets/sucess.png")} alt='sucess' />
-              <p className='titleText'>Upon completing our courses, you will gain a comprehensive skill set that empowers you to:</p>
+              {/* <motion.img
+             
+                style={{ position: 'relative', left: '30vw' }} src={require("./assets/sucess.png")} alt='sucess' /> */}
+              <motion.p className='titleText'>Upon completing our courses, you will gain a comprehensive skill set that empowers you to:</motion.p >
 
               <ul>
                 <li>Build and deploy your own websites</li>
@@ -176,7 +174,7 @@ function App() {
               <p className='our-focus'>Our focus on one-on-one mentorship ensures personalized guidance, and our commitment to solving doubts in Kannada fosters a supportive learning environment. Whether you're aiming to launch a career in web development or enhance your existing skills, our courses provide the knowledge and hands-on experience you need.</p>
             </div>
 
-          </section>
+          </motion.section>
 
         </div>
       </Content>
